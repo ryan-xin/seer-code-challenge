@@ -77,6 +77,10 @@ p {
   color: #322E3B;
 }
 
+.text-color-white {
+  color: #FFFFFF;
+}
+
 .button-primary {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;

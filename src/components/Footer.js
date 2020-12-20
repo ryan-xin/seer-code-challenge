@@ -4,27 +4,33 @@ import './Footer.css';
 const Footer = (props) => {
   return(
     <footer className="footer">
-      <div>
+      <div className="footer-icon-container">
         <div>
-          <img src="/seer_logo_white.png" alt="seer_logo" />
+          <img className="footer-logo" src="/seer_logo_white@2x.png" alt="seer_logo" />
         </div>
-        <div>
-          <img src="/linkedin_icon.svg" alt="linkedin" />
-          <img src="/facebook_icon.svg" alt="facebook" />
-          <img src="/instagram_icon.svg" alt="instagram" />
+        <div className="social-icon-container">
+          <div className="social-icon">
+            <img src="/linkedin_icon.svg" alt="linkedin" />
+          </div>
+          <div className="social-icon">
+            <img src="/facebook_icon.svg" alt="facebook" />
+          </div>
+          <div className="social-icon">
+            <img src="/instagram_icon.svg" alt="instagram" />
+          </div>
         </div>
       </div>
-      <div></div>
-      <div>
+      <div className="horizontal-divider"></div>
+      <div className="footer-link-container">
         <div>
-          <ul>
+          <ul className="footer-link link-small text-color-white">
             <li>About Us</li>
             <li>Privacy Policy</li>
             <li>Terms of Service</li>
           </ul>
         </div>
         <div>
-          <p>&copy; Seer Data & Analytics 2020</p>
+          <p className="p-small text-color-white">&copy; Seer Data & Analytics 2020</p>
         </div>
       </div>
     </footer>
