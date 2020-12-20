@@ -12,7 +12,8 @@ Rewrite Seer Blog using React - Blog Index Page and Blog Post Page.
 
 Here is the live [website.](https://ryan-xin.github.io/covid-19-tracker-frontend)
 
-![Screenshot of the website:](https://raw.githubusercontent.com/ryan-xin/covid-19-tracker-frontend/master/public/01%20Covid-19%20Tracker%20Login.png)
+![Screenshot of the website:](https://github.com/ryan-xin/seer-code-challenge/blob/main/public/seer_challenge_blog_page.png)
+![Screenshot of the website:](https://github.com/ryan-xin/seer-code-challenge/blob/main/public/seer_challenge_post_page.png)
 
 ### Main Features ###
 

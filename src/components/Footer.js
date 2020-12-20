@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Footer.css';
 
 const Footer = (props) => {
   return(
     <footer className="footer">
+      {/* Footer top part */}
       <div className="footer-icon-container">
         <div>
           <img className="footer-logo" src="/seer_logo_white@2x.png" alt="seer_logo" />
@@ -20,7 +21,9 @@ const Footer = (props) => {
           </div>
         </div>
       </div>
+      {/* Footer horizontal line */}
       <div className="horizontal-divider"></div>
+      {/* Footer bottom part */}
       <div className="footer-link-container">
         <div>
           <ul className="footer-link link-small text-color-white">

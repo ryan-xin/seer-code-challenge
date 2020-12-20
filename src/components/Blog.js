@@ -1,10 +1,10 @@
+import './Blog.css';
 import React, { useState, useEffect } from 'react';
 import Banner from './Banner';
 import PostList from './PostList';
 import Pagination from './Pagination';
 import Loading from './Loading';
 import axios from 'axios';
-import './Blog.css';
 
 const Blog = (props) => {
   const BLOG_URL = 'http://backend.seerplatform.com/content-types/blog';
@@ -54,7 +54,7 @@ const Blog = (props) => {
         setDisplayedPosts(resPosts.slice((convertedExistedPage - 1) * 10, (convertedExistedPage * 10)))
         localStorage.setItem('currentPage', convertedExistedPage);
       } else {
-        // If not setCurrentPage to 1
+        // If existedPage doesn't exists, setCurrentPage to 1
         setCurrentPage(1);
         localStorage.setItem('currentPage', 1);
         // Save first 10 posts to displayedPosts and pass to PostList
@@ -76,7 +76,7 @@ const Blog = (props) => {
     }
   });
   
-  // When currentPage changed call this method to set current displayedPosts and pass to PostList
+  // When currentPage changed this method is trigged to set current displayedPosts and pass to PostList
   useEffect(() => {
     setDisplayedPosts(allPosts.slice((currentPage - 1) * 10, (currentPage * 10)))
   }, [currentPage]);

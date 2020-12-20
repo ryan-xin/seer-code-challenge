@@ -66,3 +66,30 @@
   border: 2px solid #C5344E;
   background-color: #C5344E;
 }
+
+/* --------------------- Responsive --------------------- */
+
+@media screen and (max-width: 660px) {
+  .footer-link-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer {
+    padding: 40px 20px;
+    margin-top: 100px;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .footer-icon-container {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .footer-link li {
+    padding: 0 15px 0 0;
+  }
+}

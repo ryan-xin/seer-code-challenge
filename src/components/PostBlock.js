@@ -1,6 +1,6 @@
+import './PostBlock.css';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './PostBlock.css';
 
 const PostBlock = (props) => {
   const POST_PATH = `/blog/post/${props.id}`;

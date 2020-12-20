@@ -15,3 +15,11 @@
 .post-block-item h2:hover {
   color: #C5344E;
 }
+
+/* --------------------- Responsive --------------------- */
+
+@media screen and (max-width: 1200px) {
+  .post-block-item {
+    flex: auto;
+  }
+}

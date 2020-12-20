@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import './Navigation.css';
+import React, { useState, useEffect } from 'react';
 
 const Navigation = (props) => {
   return(

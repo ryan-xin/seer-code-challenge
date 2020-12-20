@@ -8,3 +8,11 @@
   flex-wrap: wrap;
   gap: 60px;
 }
+
+/* --------------------- Responsive --------------------- */
+
+@media screen and (max-width: 1200px) {
+  .blog-container {
+    width: 90vw;
+  }
+}
