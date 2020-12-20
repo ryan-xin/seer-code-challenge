@@ -19,7 +19,7 @@ const Navigation = (props) => {
         </div>
         <div className="vertical-divider"></div>
         <div className="nav-cta-container">
-          <p className="link text-color-secondary">Sign In</p>
+          <span className="link text-color-secondary">Sign In</span>
           <button className="button-primary">Get Started for Free</button>
         </div>
       </div>
