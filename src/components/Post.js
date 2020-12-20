@@ -27,9 +27,7 @@ const Post = (props) => {
     <>
       <div>
         <div>
-          <p>
-            <Link to={'/blog'}>Blog</Link> | {title}
-          </p>
+          <Link to={'/blog'}>Back to Blog</Link>
         </div>
         <div>
           <h2>{title}</h2>
