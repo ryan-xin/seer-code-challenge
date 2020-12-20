@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Loading from './Loading';
 import axios from 'axios';
 import './Post.css';
 
 const Post = (props) => {
   const POST_URL = `http://backend.seerplatform.com/content-types/blog/${props.match.params.postId}`;
+  const history = useHistory();
   
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');

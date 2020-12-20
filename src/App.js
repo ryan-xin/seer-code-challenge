@@ -10,7 +10,7 @@ function App() {
     <>
       <Router>
         <Navigation />
-        <Route exact path="/blog" component={Blog} />
+        <Route exact path={["/blog", "/blog/pages/:pageNum"]} component={Blog} />
         <Route exact path="/blog/:postId" component={Post} />
         <Footer />
       </Router>

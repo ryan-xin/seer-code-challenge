@@ -29,6 +29,7 @@ const Blog = (props) => {
   // Get num(page number) from Pagination to setCurrentPage
   const setPageHandler = (num) => {
     setCurrentPage(num);
+    localStorage.setItem('currentPage', num);
     // Scroll to Blog List top position
     window.scrollTo(0, 500);
   };
@@ -40,11 +41,11 @@ const Blog = (props) => {
       const resPosts = res.data.data.content_type.contents;
       // Save all posts to allPosts
       setAllPosts(resPosts);
-      // Save first 10 posts to displayedPosts and pass to PostList
-      setDisplayedPosts(resPosts.slice(0, 10));
       // Save pages number to pages
       const pages = Math.round(resPosts.length / 10);
       setPages(pages);
+      // Save first 10 posts to displayedPosts and pass to PostList
+      setDisplayedPosts(resPosts.slice(0, 10));
       setIsLoading(false);
     })
     .catch(err => console.log(err));

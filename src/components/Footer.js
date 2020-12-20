@@ -30,7 +30,7 @@ const Footer = (props) => {
           </ul>
         </div>
         <div>
-          <p className="p-small text-color-white">&copy; Seer Data & Analytics 2020</p>
+          <span className="p-small text-color-white">&copy; Seer Data & Analytics 2020</span>
         </div>
       </div>
     </footer>
