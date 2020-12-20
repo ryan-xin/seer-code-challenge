@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="24px" height="28px" viewBox="0 0 24 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="24px" height="38px" viewBox="0 0 24 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>arrow_down</title>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="seer_blog_index_desktop_hd" transform="translate(-137.000000, -521.000000)" fill="#FFFFFF">
-            <path d="M150.976588,521 L150.976,541.351 L158.245087,534.083467 L161.040405,536.878785 L148.959595,548.959595 L136.959595,536.959595 L139.773737,534.145453 L147.023,541.394 L147.023412,521 L150.976588,521 Z" id="arrow_down"></path>
+        <g id="seer_blog_index_desktop_hd" transform="translate(-137.000000, -511.000000)" fill="#AF66A3">
+            <path d="M150.976588,511 L150.975595,541.351 L158.245087,534.083467 L161.040405,536.878785 L148.959595,548.959595 L136.959595,536.959595 L139.773737,534.145453 L147.022595,541.394 L147.023412,511 L150.976588,511 Z" id="arrow_down"></path>
         </g>
     </g>
 </svg>
