@@ -1,0 +1,39 @@
+.pagination-container, .page-number-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.page-number {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.current-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #6C3563;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.unselected-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.unselected-page:hover {
+  background-color: #EEEDF4;
+}

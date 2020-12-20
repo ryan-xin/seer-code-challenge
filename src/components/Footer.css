@@ -54,6 +54,7 @@
   border: 2px solid #4A4457;
   cursor: pointer;
   transition: 0.3s;
+  cursor: pointer;
 }
 
 .social-icon:hover {

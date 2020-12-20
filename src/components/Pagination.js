@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import React, { useState, useEffect } from 'react';
+import './Pagination.css';
 
 const Pagination = (props) => {
   // Use props.pages to render pages number buttons
@@ -8,18 +9,27 @@ const Pagination = (props) => {
     // Set selected class(current-page) to props.currentPage number button
     if(i === props.currentPage) {
       pageButtons.push(
-        <p 
-          className="current-page" 
+        <div
+          className="current-page"
           key={i} 
           onClick={() => setPageHandler(i)}
-        >{i}</p>
+        >
+          <span 
+            className="page-number text-color-white" 
+          >{i}</span>
+        </div>
       )
     } else {
       pageButtons.push(
-        <p
+        <div
+          className="unselected-page"
           key={i}
           onClick={() => setPageHandler(i)}
-        >{i}</p>
+        >
+          <span
+            className="page-number text-color-primary"
+          >{i}</span>
+        </div>
       )
     }
   }
@@ -43,19 +53,31 @@ const Pagination = (props) => {
   
   return(
     <>
-      <div>
+      <div className="pagination-container">
         {/* Hide PrevPage Button when props.currentPage is the first page */}
         {
           props.currentPage === 1 ? 
           null : 
-          <div onClick={() => changePageHandler(-1)}>-</div>
+          <div
+            className="unselected-page"
+            onClick={() => changePageHandler(-1)}
+          >
+            <img src="/prev_page_icon.svg" alt="Prev Page" />
+          </div>
         }
-        {pageButtons}
+        <div className="page-number-container">
+          {pageButtons}
+        </div>
         {/* Hide NextPage Button when props.currentPage is the last page */}
         {
           props.currentPage === props.pages ? 
           null : 
-          <div onClick={() => changePageHandler(1)}>+</div>
+          <div
+            className="unselected-page"
+            onClick={() => changePageHandler(1)}
+          >
+            <img src="/next_page_icon.svg" alt="Next Page" />
+          </div>
         }
       </div>
     </>
