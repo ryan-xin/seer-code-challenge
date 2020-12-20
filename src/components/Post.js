@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Loading from './Loading';
 import axios from 'axios';
 
 const Post = (props) => {
@@ -25,21 +26,21 @@ const Post = (props) => {
   
   return(
     <>
-      <div>
-        <div>
-          <Link to={'/blog'}>Back to Blog</Link>
-        </div>
-        <div>
-          <h2>{title}</h2>
-          <p>{date}</p>
-        </div>
-      </div>
       {
         isLoading ? 
-        <div>
-          <p>Loading</p>
-        </div> :
-        <div dangerouslySetInnerHTML={{__html: body}} />
+        <Loading /> :
+        <>
+          <div>
+            <div>
+              <Link to={'/blog'}>Back to Blog</Link>
+            </div>
+            <div>
+              <h2>{title}</h2>
+              <p>{date}</p>
+            </div>
+          </div>
+          <div dangerouslySetInnerHTML={{__html: body}} />
+        </>
       }
     </>
   )

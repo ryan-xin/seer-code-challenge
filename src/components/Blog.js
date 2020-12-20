@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Banner from './Banner';
 import PostList from './PostList';
 import Pagination from './Pagination';
+import Loading from './Loading';
 import axios from 'axios';
 
 const Blog = (props) => {
@@ -45,23 +46,19 @@ const Blog = (props) => {
       <Banner />
       {
         isLoading ? 
-        <div>
-          <p>Loading</p>
-        </div> :
-        (
-          <>
-            <PostList 
-              posts={posts}
-              currentPage={currentPage}
-            />
-            <Pagination 
-              pages={pages}
-              currentPage={currentPage}
-              changePage={changePageHandler}
-              setPage={setPageHandler}
-            />
-          </>
-        )
+        <Loading /> :
+        <>
+          <PostList 
+            posts={posts}
+            currentPage={currentPage}
+          />
+          <Pagination 
+            pages={pages}
+            currentPage={currentPage}
+            changePage={changePageHandler}
+            setPage={setPageHandler}
+          />
+        </>
       }
     </>
   )

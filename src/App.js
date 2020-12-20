@@ -10,10 +10,8 @@ function App() {
     <>
       <Router>
         <Header />
-        <hr />
         <Route exact path="/blog" component={Blog} />
         <Route exact path="/blog/:postId" component={Post} />
-        <hr />
         <Footer />
       </Router>
     </>
