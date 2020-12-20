@@ -1,0 +1,51 @@
+.main-nav {
+  padding: 20px 40px;
+  background-color: #FFFFFF;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid #e3e1e9;
+}
+
+.nav-logo {
+  height: 70px;
+}
+
+.nav-link li {
+  display: inline-block;
+  padding-left: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-link li:hover {
+  color: #C5344E;
+}
+
+.current-nav-link {
+  color: #C5344E;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-link-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.vertical-divider {
+  height: 24px;
+  width: 2px;
+  background-color: #cfccd7;
+}
+
+.nav-cta-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}

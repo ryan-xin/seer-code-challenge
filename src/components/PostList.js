@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import PostBlock from './PostBlock';
 
 const PostList = (props) => {
-  
   return(
     props.posts.map((post) => {
       return <PostBlock 

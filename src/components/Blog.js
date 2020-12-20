@@ -32,7 +32,7 @@ const Blog = (props) => {
     window.scrollTo(0, 0);    
   };
   
-  // Call the method when DOM is ready (componentDidMount)
+  // Get all posts from backend when DOM is ready (componentDidMount)
   useEffect(() => {
     axios.get(BLOG_URL)
     .then(res => {

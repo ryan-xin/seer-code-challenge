@@ -11,10 +11,10 @@ const Post = (props) => {
   const [body, setBody] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   
+  // Get selected post from backend when DOM is ready (componentDidMount)
   useEffect(() => {
     axios.get(POST_URL)
     .then(res => {
-      console.log(res.data.data.content);
       const post = res.data.data.content;
       setTitle(post.title);
       setDate(post.created_at.slice(0, 10));
