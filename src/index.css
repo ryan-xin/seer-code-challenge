@@ -16,8 +16,8 @@ h1 {
 }
 
 h2 {
-  font-size: 40px;
-  line-height: 50px;
+  font-size: 36px;
+  line-height: 42px;
 }
 
 h3 {
@@ -97,4 +97,8 @@ p {
 
 .button-primary:hover {
   background-color: #6C3563;
+}
+
+.no-underline-link {
+  text-decoration: none;
 }

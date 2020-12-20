@@ -5,6 +5,10 @@
   gap: 20px;
 }
 
+.pagination-container {
+  margin-top: 80px;
+}
+
 .page-number {
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;

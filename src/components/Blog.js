@@ -4,6 +4,7 @@ import PostList from './PostList';
 import Pagination from './Pagination';
 import Loading from './Loading';
 import axios from 'axios';
+import './Blog.css';
 
 const Blog = (props) => {
   const BLOG_URL = 'http://backend.seerplatform.com/content-types/blog';
@@ -22,14 +23,14 @@ const Blog = (props) => {
   const changePageHandler = (num) => {
     setCurrentPage(currentPage + num);
     // Scroll to Blog List top position
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 500);
   };
   
   // Get num(page number) from Pagination to setCurrentPage
   const setPageHandler = (num) => {
     setCurrentPage(num);
     // Scroll to Blog List top position
-    window.scrollTo(0, 0);    
+    window.scrollTo(0, 500);
   };
   
   // Get all posts from backend when DOM is ready (componentDidMount)
@@ -63,17 +64,19 @@ const Blog = (props) => {
       {
         isLoading ? 
         <Loading /> :
-        <>
-          <PostList 
-            posts={displayedPosts}
-          />
+        <div className="blog-container">
+          <div className="blog-list-container">
+            <PostList 
+              posts={displayedPosts}
+            />
+          </div>
           <Pagination 
             pages={pages}
             currentPage={currentPage}
             changePage={changePageHandler}
             setPage={setPageHandler}
           />
-        </>
+        </div>
       }
     </>
   )

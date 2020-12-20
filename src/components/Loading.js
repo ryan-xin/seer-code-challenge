@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import './Loading.css';
 
 const Loading = (props) => {
   return(
-    <div>
-      <p>Loading...</p>
+    <div className="loading-container">
+      <h4>Loading...</h4>
     </div>
   )
 }

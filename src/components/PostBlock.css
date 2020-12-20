@@ -1,0 +1,17 @@
+.post-block-item {
+  width: 570px;
+}
+
+.post-thumbnail {
+  width: 100%;
+  border: 1px solid #E3E1E9;
+  margin-bottom: 20px;
+}
+
+.post-block-item h2 {
+  margin-bottom: 15px;
+}
+
+.post-block-item h2:hover {
+  color: #C5344E;
+}

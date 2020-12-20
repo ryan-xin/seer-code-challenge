@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import PostBlock from './PostBlock';
+// import './PostList.css';
 
 const PostList = (props) => {
   return(
