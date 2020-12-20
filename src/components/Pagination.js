@@ -1,5 +1,6 @@
 import { render } from '@testing-library/react';
 import React, { useState, useEffect } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import './Pagination.css';
 
 const Pagination = (props) => {
@@ -34,21 +35,26 @@ const Pagination = (props) => {
     }
   }
   
+  const history = useHistory();
+  
   // Lifting State num to parent to setCurrentPage: '-1' stands for clicking PrevPage Button; '1' stands for clicking PrevPage Button
   const changePageHandler = (num) => {
     // Only trigger PrevPage Button when props.currentPage is bigger than 1
     if(num === -1 && props.currentPage > 1) {
       props.changePage(num);
+      history.push(`/blog/${props.currentPage + num}`);
     }
     // Only trigger NextPage Button when props.currentPage is smaller than total pages(props.pages)
     if(num === 1 && props.currentPage < props.pages) {
       props.changePage(num);
+      history.push(`/blog/${props.currentPage + num}`);
     }
   };
   
   // Lifting State num to parent to setCurrentPage: num is the selected page number
   const setPageHandler = (num) => {
     props.setPage(num);
+    history.push(`/blog/${num}`)
   };
   
   return(

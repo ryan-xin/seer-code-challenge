@@ -3,16 +3,24 @@ import { Link } from 'react-router-dom';
 import './PostBlock.css';
 
 const PostBlock = (props) => {
+  const POST_PATH = `/blog/post/${props.id}`;
+  
+  // Save current scroll position to localstorage
+  const saveScrollPosition = () => {
+    console.log(window.pageYOffset);
+    localStorage.setItem('scrollPosition', window.pageYOffset);
+  };
+  
   return(
     <div className="post-block-item">
-      <Link target="_blank" to={`/blog/${props.id}`}>
-        <img className="post-thumbnail" src={props.banner} alt={props.title} />
+      <Link to={POST_PATH}>
+        <img onClick={saveScrollPosition} className="post-thumbnail" src={props.banner} alt={props.title} />
       </Link>
-      <Link className="no-underline-link" target="_blank" to={`/blog/${props.id}`}>
-        <h2 className="text-color-darkgrey post-title-link">{props.title}</h2>
+      <Link className="no-underline-link" to={POST_PATH}>
+        <h2 onClick={saveScrollPosition} className="text-color-darkgrey post-title-link">{props.title}</h2>
       </Link>
       <p className="text-color-darkgrey">{props.description}</p>
-      <Link className="link text-color-secondary" target="_blank" to={`/blog/${props.id}`}>Read More</Link>
+      <Link className="link text-color-secondary" onClick={saveScrollPosition} to={POST_PATH}>Read More</Link>
     </div>
   )
 }

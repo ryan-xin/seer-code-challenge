@@ -18,10 +18,6 @@
   transition: 0.3s;
 }
 
-.nav-link li:hover {
-  color: #C5344E;
-}
-
 .current-nav-link {
   color: #C5344E;
 }

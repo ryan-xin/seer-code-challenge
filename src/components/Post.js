@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import axios from 'axios';
 import './Post.css';
 
 const Post = (props) => {
   const POST_URL = `http://backend.seerplatform.com/content-types/blog/${props.match.params.postId}`;
-  const history = useHistory();
+  
+  const currentPage = localStorage.getItem('currentPage');
   
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
@@ -40,7 +41,7 @@ const Post = (props) => {
             }}
           >
             <div className="bread-crumbs">
-              <Link className="link-small text-color-white" to={'/blog'}>&lt; Back to Blog</Link>
+              <Link className="link-small text-color-white" to={`/blog/${currentPage}`}>&lt; Back to Blog</Link>
             </div>
             <div className="post-header-content-wrapper">
               <div className="post-header-content">

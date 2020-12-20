@@ -22,6 +22,7 @@ const Blog = (props) => {
   // Get num(1 or -1) from Pagination to setCurrentPage
   const changePageHandler = (num) => {
     setCurrentPage(currentPage + num);
+    localStorage.setItem('currentPage', currentPage + num);
     // Scroll to Blog List top position
     window.scrollTo(0, 500);
   };
@@ -44,12 +45,36 @@ const Blog = (props) => {
       // Save pages number to pages
       const pages = Math.round(resPosts.length / 10);
       setPages(pages);
-      // Save first 10 posts to displayedPosts and pass to PostList
-      setDisplayedPosts(resPosts.slice(0, 10));
+      // If existedPage has value setCurrentPage to parseInt(existedPage)
+      const existedPage = props.match.params.pageNum;
+      if(existedPage) {
+        // props.match.params.pageNum returns a string, it needs to be converted to num.
+        const convertedExistedPage = parseInt(existedPage);
+        setCurrentPage(convertedExistedPage);
+        setDisplayedPosts(resPosts.slice((convertedExistedPage - 1) * 10, (convertedExistedPage * 10)))
+        localStorage.setItem('currentPage', convertedExistedPage);
+      } else {
+        // If not setCurrentPage to 1
+        setCurrentPage(1);
+        localStorage.setItem('currentPage', 1);
+        // Save first 10 posts to displayedPosts and pass to PostList
+        setDisplayedPosts(resPosts.slice(0, 10));
+      }
       setIsLoading(false);
     })
     .catch(err => console.log(err));
   }, []);
+  
+  useEffect(() => {
+    const scrollPosition = localStorage.getItem('scrollPosition');
+    if(scrollPosition) {
+      setTimeout(() => {
+        console.log(scrollPosition);
+        window.scrollTo({top: parseInt(scrollPosition), left: 0, behavior: 'smooth'});
+        localStorage.removeItem('scrollPosition');
+      }, 80);
+    }
+  });
   
   // When currentPage changed call this method to set current displayedPosts and pass to PostList
   useEffect(() => {

@@ -16,8 +16,8 @@ h1 {
 }
 
 h2 {
-  font-size: 36px;
-  line-height: 42px;
+  font-size: 34px;
+  line-height: 40px;
 }
 
 h3 {
@@ -53,6 +53,15 @@ p {
   line-height: 16px;
   cursor: pointer;
   text-decoration: none;
+}
+
+.link li {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+.link li:hover {
+  color: #C5344E;
 }
 
 .link-small {
