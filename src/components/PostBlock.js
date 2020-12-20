@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 const PostBlock = (props) => {
   return(
@@ -6,7 +7,7 @@ const PostBlock = (props) => {
       <img src={props.banner} alt={props.title} />
       <h2>{props.title}</h2>
       <p>{props.description}</p>
-      <button>Read More</button>
+      <Link to={`/blog/${props.id}`}>Read More</Link>
     </>
   )
 }
