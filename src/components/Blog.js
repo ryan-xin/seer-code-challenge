@@ -16,6 +16,11 @@ const Blog = (props) => {
   const changePageHandler = (num) => {
     setCurrentPage(currentPage + num);
     window.scrollTo(0, 0);
+  };
+  
+  const setPageHandler = (num) => {
+    setCurrentPage(num);
+    window.scrollTo(0, 0);    
   }
   
   useEffect(() => {
@@ -45,8 +50,16 @@ const Blog = (props) => {
         </div> :
         (
           <>
-            <PostList posts={posts} currentPage={currentPage} />
-            <Pagination pages={pages} currentPage={currentPage} changePage={changePageHandler} />
+            <PostList 
+              posts={posts}
+              currentPage={currentPage}
+            />
+            <Pagination 
+              pages={pages}
+              currentPage={currentPage}
+              changePage={changePageHandler}
+              setPage={setPageHandler}
+            />
           </>
         )
       }

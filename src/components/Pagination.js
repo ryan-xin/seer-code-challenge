@@ -6,9 +6,9 @@ const Pagination = (props) => {
   
   for (let i = 1; i <= props.pages; i++) {
     if(i === props.currentPage) {
-      pageButtons.push(<p className="current-page" key={i}>{i}</p>)
+      pageButtons.push(<p className="current-page" key={i} onClick={() => setPageHandler(i)}>{i}</p>)
     } else {
-      pageButtons.push(<p key={i}>{i}</p>)
+      pageButtons.push(<p key={i} onClick={() => setPageHandler(i)}>{i}</p>)
     }
   }
   
@@ -19,19 +19,25 @@ const Pagination = (props) => {
     if(num === 1 && props.currentPage < props.pages) {
       props.changePage(num);
     }
-  }
+  };
+  
+  const setPageHandler = (num) => {
+    props.setPage(num);
+  };
   
   return(
     <>
       <div>
         {
           props.currentPage === 1 ? 
-          null : <div onClick={() => changePageHandler(-1)}>-</div>
+          null : 
+          <div onClick={() => changePageHandler(-1)}>-</div>
         }
         {pageButtons}
         {
           props.currentPage === props.pages ? 
-          null : <div onClick={() => changePageHandler(1)}>+</div>
+          null : 
+          <div onClick={() => changePageHandler(1)}>+</div>
         }
       </div>
     </>
