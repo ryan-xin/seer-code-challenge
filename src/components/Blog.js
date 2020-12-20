@@ -72,7 +72,7 @@ const Blog = (props) => {
         console.log(scrollPosition);
         window.scrollTo({top: parseInt(scrollPosition), left: 0, behavior: 'smooth'});
         localStorage.removeItem('scrollPosition');
-      }, 80);
+      }, 140);
     }
   });
   
