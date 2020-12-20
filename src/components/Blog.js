@@ -15,6 +15,8 @@ const Blog = (props) => {
   
   const changePageHandler = (num) => {
     setCurrentPage(currentPage + num);
+    window.location.reload(false);
+    window.scrollTo(0, 0);
   }
   
   useEffect(() => {
