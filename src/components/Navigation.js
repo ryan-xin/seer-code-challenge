@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navigation.css';
 
 const Navigation = (props) => {
@@ -13,7 +14,9 @@ const Navigation = (props) => {
             <li>Why Seer</li>
             <li>Pricing</li>
             <li>Customer</li>
-            <li className="current-nav-link">Blog</li>
+            <li>
+              <Link className="link current-nav-link" to={'/blog'}>Blog</Link>
+            </li>
             <li>Support</li>
           </ul>
         </div>

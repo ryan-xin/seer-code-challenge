@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from './Loading';
 import axios from 'axios';
+import './Post.css';
 
 const Post = (props) => {
   const POST_URL = `http://backend.seerplatform.com/content-types/blog/${props.match.params.postId}`;
@@ -30,16 +31,27 @@ const Post = (props) => {
         isLoading ? 
         <Loading /> :
         <>
-          <div>
-            <div>
-              <Link to={'/blog'}>Back to Blog</Link>
+          <div
+            className="post-header"
+            style={{
+              background: 'url("/banner_circle_03.svg") right bottom no-repeat',
+              backgroundColor: '#6C3563'
+            }}
+          >
+            <div className="bread-crumbs">
+              <Link className="link-small text-color-white" to={'/blog'}>&lt; Back to Blog</Link>
             </div>
-            <div>
-              <h2>{title}</h2>
-              <p>{date}</p>
+            <div className="post-header-content-wrapper">
+              <div className="post-header-content">
+                <h1 className="text-color-white">{title}</h1>
+                <p>{date}</p>
+              </div>
             </div>
           </div>
-          <div dangerouslySetInnerHTML={{__html: body}} />
+          <div
+            className="post-body"
+            dangerouslySetInnerHTML={{__html: body}}
+          />
         </>
       }
     </>

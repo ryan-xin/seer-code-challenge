@@ -52,6 +52,7 @@ p {
   font-size: 16px;
   line-height: 16px;
   cursor: pointer;
+  text-decoration: none;
 }
 
 .link-small {
@@ -59,6 +60,7 @@ p {
   font-weight: 700;
   font-size: 14px;
   line-height: 20px;
+  text-decoration: none;
 }
 
 .text-color-primary {

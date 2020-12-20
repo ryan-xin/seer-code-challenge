@@ -10,10 +10,12 @@ const Banner = (props) => {
         backgroundColor: '#6C3563'
       }}
     >
-      <div className="banner-content">
-        <h1>{props.title}</h1>
-        <p>{props.description}</p>
-        <img src='/arrow_down.svg' alt="down arrow" />
+      <div className="banner-content-wrapper">
+        <div className="banner-content">
+          <h1>{props.title}</h1>
+          <p>{props.description}</p>
+          <img src='/arrow_down.svg' alt="down arrow" />
+        </div>
       </div>
     </div>
   )

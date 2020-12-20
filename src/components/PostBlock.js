@@ -12,7 +12,7 @@ const PostBlock = (props) => {
         <h2 className="text-color-darkgrey post-title-link">{props.title}</h2>
       </Link>
       <p className="text-color-darkgrey">{props.description}</p>
-      <Link className="no-underline-link link text-color-secondary" to={`/blog/${props.id}`}>Read More</Link>
+      <Link className="link text-color-secondary" to={`/blog/${props.id}`}>Read More</Link>
     </div>
   )
 }

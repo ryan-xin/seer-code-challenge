@@ -5,8 +5,13 @@
   padding: 140px 40px 100px;
 }
 
+.banner-content-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 .banner-content {
-  width: 470px;
+  width: 600px;
 }
 
 .banner h1, p {
