@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const Post = (props) => {
@@ -25,6 +26,11 @@ const Post = (props) => {
   return(
     <>
       <div>
+        <div>
+          <p>
+            <Link to={'/blog'}>Blog</Link> | {title}
+          </p>
+        </div>
         <div>
           <h2>{title}</h2>
           <p>{date}</p>
