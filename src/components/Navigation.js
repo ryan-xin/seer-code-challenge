@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Menu from './Menu';
 import './Navigation.css';
 
@@ -7,6 +8,11 @@ const Navigation = (props) => {
   
   const controlMenuHandler = (value) => {
     setMenuShow(value);
+  };
+  
+  const reloadPage = () => {
+    window.location.reload(false);
+    window.scrollTo(0, 0);
   };
   
   return(
@@ -27,7 +33,8 @@ const Navigation = (props) => {
             <li>Why Seer</li>
             <li>Pricing</li>
             <li>Customer</li>
-            <li className="current-nav-link">Blog</li>
+            <li className="current-nav-link" onClick={reloadPage}>Blog</li>
+            <Link to={'/blog'} onClick={reloadPage}><li className="current-nav-link">Blog</li></Link>
             <li>Support</li>
           </ul>
         </div>

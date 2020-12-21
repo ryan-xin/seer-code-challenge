@@ -7,7 +7,7 @@ const RelatedPostBlock = (props) => {
   
   // Force reload the page to avoid 'Hash history cannot PUSH the same path; a new entry will not be added to the history stack' problem
   const reloadPage = () => {
-    window.location.reload(false);
+    window.location.reload(true);
     window.scrollTo(0, 0);
   };
   
