@@ -27,6 +27,7 @@ Here is the live [website.](https://ryan-xin.github.io/covid-19-tracker-frontend
 
 * Learn Redux or alternatives to store states instead of using localStorage;
 * Improve Pagination component: show '...' when there are too many pages;
+* Add animation transition for better user experience;
 
 ### Tech Used ###
 

@@ -1,9 +1,9 @@
-import './App.css';
-import {Route, Link, HashRouter as Router} from 'react-router-dom';
+import {Route, HashRouter as Router} from 'react-router-dom';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import Blog from './components/Blog';
 import Post from './components/Post';
+import './App.css';
 
 function App() {
   return (

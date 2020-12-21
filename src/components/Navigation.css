@@ -46,3 +46,23 @@
   align-items: center;
   gap: 40px;
 }
+
+.nav-responsive {
+  display: none;
+}
+
+/* --------------------- Responsive --------------------- */
+
+@media screen and (max-width: 1200px) {
+  .nav-desktop {
+    display: none;
+  }
+  
+  .nav-responsive {
+    display: block;
+  }
+  
+  .menu-icon {
+    cursor: pointer;
+  }
+}

@@ -1,5 +1,5 @@
-import './Banner.css';
 import React, { useState, useEffect } from 'react';
+import './Banner.css';
 
 const Banner = (props) => {
   return(

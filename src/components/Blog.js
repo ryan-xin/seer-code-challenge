@@ -1,10 +1,10 @@
-import './Blog.css';
 import React, { useState, useEffect } from 'react';
 import Banner from './Banner';
 import PostList from './PostList';
 import Pagination from './Pagination';
 import Loading from './Loading';
 import axios from 'axios';
+import './Blog.css';
 
 const Blog = (props) => {
   const BLOG_URL = 'http://backend.seerplatform.com/content-types/blog';
