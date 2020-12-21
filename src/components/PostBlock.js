@@ -19,7 +19,8 @@ const PostBlock = (props) => {
             onClick={saveScrollPosition}
             className="post-thumbnail"
             src={props.banner}
-            alt={props.title} />
+            alt={props.title}
+          />
         </div>
       </Link>
       
@@ -29,7 +30,8 @@ const PostBlock = (props) => {
         to={POST_PATH}>
         <h2
           onClick={saveScrollPosition}
-          className="text-color-darkgrey post-title-link">
+          className="text-color-darkgrey post-title-link"
+        >
           {props.title}
         </h2>
       </Link>
@@ -41,7 +43,8 @@ const PostBlock = (props) => {
       <Link
         className="link text-color-secondary"
         onClick={saveScrollPosition}
-        to={POST_PATH}>
+        to={POST_PATH}
+      >
         Read More
       </Link>
     </div>

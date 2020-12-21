@@ -7,8 +7,14 @@ const Footer = (props) => {
       {/* Footer top part */}
       <div className="footer-icon-container">
         <div>
-          <img className="footer-logo" src="/seer_logo_white@2x.png" alt="seer_logo" />
+          <img
+            className="footer-logo"
+            src="/seer_logo_white@2x.png"
+            alt="seer_logo"
+          />
         </div>
+        
+        {/* Social icons */}
         <div className="social-icon-container">
           <div className="social-icon">
             <img src="/linkedin_icon.svg" alt="linkedin" />
@@ -21,8 +27,10 @@ const Footer = (props) => {
           </div>
         </div>
       </div>
+      
       {/* Footer horizontal line */}
       <div className="horizontal-divider"></div>
+      
       {/* Footer bottom part */}
       <div className="footer-link-container">
         <div>
@@ -33,7 +41,9 @@ const Footer = (props) => {
           </ul>
         </div>
         <div>
-          <span className="p-small text-color-white">&copy; Seer Data & Analytics 2020</span>
+          <span className="p-small text-color-white">
+            &copy; Seer Data & Analytics 2020
+          </span>
         </div>
       </div>
     </footer>

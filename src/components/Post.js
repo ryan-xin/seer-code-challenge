@@ -33,6 +33,7 @@ const Post = (props) => {
         isLoading ? 
         <Loading /> :
         <>
+          {/* Blog post header */}
           <div
             className="post-header"
             style={{
@@ -40,9 +41,16 @@ const Post = (props) => {
               backgroundColor: '#6C3563'
             }}
           >
+            {/* Back to Blog button */}
             <div className="bread-crumbs">
-              <Link className="link-small text-color-white" to={`/blog/${currentPage}`}>&lt; Back to Blog</Link>
+              <Link
+                className="link-small text-color-white"
+                to={`/blog/${currentPage}`}
+              >
+                &lt; Back to Blog
+              </Link>
             </div>
+            
             <div className="post-header-content-wrapper">
               <div className="post-header-content">
                 <h1 className="text-color-white">{title}</h1>
@@ -50,6 +58,8 @@ const Post = (props) => {
               </div>
             </div>
           </div>
+          
+          {/* Blog post body content */}
           <div
             className="post-body"
             dangerouslySetInnerHTML={{__html: body}}

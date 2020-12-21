@@ -19,9 +19,10 @@ const Blog = (props) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(true);
   
-  // Get num(1 or -1) from Pagination to setCurrentPage
+  // Get num(1 or -1; 1 stands for next page & -1 stands for prev page) from Pagination to setCurrentPage
   const changePageHandler = (num) => {
     setCurrentPage(currentPage + num);
+    // Save currentPage to localStorage for non-children component use
     localStorage.setItem('currentPage', currentPage + num);
     // Scroll to Blog List top position
     window.scrollTo(0, 500);
@@ -30,6 +31,7 @@ const Blog = (props) => {
   // Get num(page number) from Pagination to setCurrentPage
   const setPageHandler = (num) => {
     setCurrentPage(num);
+    // Save currentPage to localStorage for non-children component use
     localStorage.setItem('currentPage', num);
     // Scroll to Blog List top position
     window.scrollTo(0, 500);
@@ -42,9 +44,11 @@ const Blog = (props) => {
       const resPosts = res.data.data.content_type.contents;
       // Save all posts to allPosts
       setAllPosts(resPosts);
+      
       // Save pages number to pages
       const pages = Math.round(resPosts.length / 10);
       setPages(pages);
+      
       // If existedPage has value setCurrentPage to parseInt(existedPage)
       const existedPage = props.match.params.pageNum;
       if(existedPage) {
@@ -52,10 +56,12 @@ const Blog = (props) => {
         const convertedExistedPage = parseInt(existedPage);
         setCurrentPage(convertedExistedPage);
         setDisplayedPosts(resPosts.slice((convertedExistedPage - 1) * 10, (convertedExistedPage * 10)))
+        // Save currentPage to localStorage for non-children component use
         localStorage.setItem('currentPage', convertedExistedPage);
       } else {
         // If existedPage doesn't exists, setCurrentPage to 1
         setCurrentPage(1);
+        // Save currentPage to localStorage for non-children component use
         localStorage.setItem('currentPage', 1);
         // Save first 10 posts to displayedPosts and pass to PostList
         setDisplayedPosts(resPosts.slice(0, 10));
@@ -65,7 +71,9 @@ const Blog = (props) => {
     .catch(err => console.log(err));
   }, []);
   
+  // For handling go back to previous scroll position
   useEffect(() => {
+    // Get saved scrollPosition from localStorage
     const scrollPosition = localStorage.getItem('scrollPosition');
     if(scrollPosition) {
       setTimeout(() => {
@@ -91,16 +99,19 @@ const Blog = (props) => {
         title={blogBanner.title}
         description={blogBanner.description}
       />
+      
       {
         isLoading ? 
         <Loading /> :
         <div className="blog-container">
+        
           {/* Blog posts list */}
           <div className="blog-list-container">
             <PostList 
               posts={displayedPosts}
             />
           </div>
+          
           {/* Pagination */}
           <Pagination 
             pages={pages}

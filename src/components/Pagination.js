@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './Pagination.css';
 
 const Pagination = (props) => {
-  // Use props.pages to render pages number buttons
+  // Use props.pages to render page number buttons
   const pageButtons = [];
   for (let i = 1; i <= props.pages; i++) {
     // Set selected class(current-page) to props.currentPage number button
@@ -43,6 +43,7 @@ const Pagination = (props) => {
       props.changePage(num);
       history.push(`/blog/${props.currentPage + num}`);
     }
+    
     // Only trigger NextPage Button when props.currentPage is smaller than total pages(props.pages)
     if(num === 1 && props.currentPage < props.pages) {
       props.changePage(num);
@@ -70,9 +71,12 @@ const Pagination = (props) => {
             <img src="/prev_page_icon.svg" alt="Prev Page" />
           </div>
         }
+        
+        {/* Render all page numbers */}
         <div className="page-number-container">
           {pageButtons}
         </div>
+        
         {/* Hide NextPage Button when props.currentPage is the last page */}
         {
           props.currentPage === props.pages ? 

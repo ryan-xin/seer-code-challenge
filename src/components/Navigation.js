@@ -7,7 +7,7 @@ const Navigation = (props) => {
   
   const controlMenuHandler = (value) => {
     setMenuShow(value);
-  }
+  };
   
   return(
     <nav className="main-nav nav-container">
@@ -16,6 +16,7 @@ const Navigation = (props) => {
         <img className="nav-logo" src="/seer_logo_color@2x.png" alt="Seer logo" />
       </div>
       <div className="nav-link-container">
+      
         {/* Navigation links */}
         <div className="nav-desktop">
           <ul className="nav-link link text-color-primary">
@@ -26,21 +27,29 @@ const Navigation = (props) => {
             <li>Support</li>
           </ul>
         </div>
+        
         {/* Divider */}
         <div className="vertical-divider nav-desktop"></div>
+        
         {/* CTA buttons */}
         <div className="nav-cta-container">
           <span className="link text-color-secondary nav-responsive-mobile">Sign In</span>
           <button className="button-primary nav-responsive-mobile">Get Started for Free</button>
+          
           {/* Responsive Menu Button */}
-          <div className="nav-responsive menu-icon" onClick={() => controlMenuHandler(true)}>
+          <div
+            className="nav-responsive menu-icon"
+            onClick={() => controlMenuHandler(true)}
+          >
             <img src="/menu_icon.svg" alt="Menu" />
           </div>
         </div>
       </div>
+      
       {/* Show / Hide responsive menu */}
       {
-        menuShow && <Menu closeMenu={controlMenuHandler} />
+        menuShow && 
+        <Menu closeMenu={controlMenuHandler} />
       }
     </nav>
   )

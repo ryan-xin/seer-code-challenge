@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './Menu.css';
 
 const Menu = (props) => {
@@ -12,6 +12,7 @@ const Menu = (props) => {
       <div className="menu-close-icon" onClick={closeMenuHandler}>
         <img src="/close_icon.svg" alt="Close" />
       </div>
+      
       {/* Nav links */}
       <div className="menu-container-content">
         <ul className="link text-color-white">
@@ -22,7 +23,10 @@ const Menu = (props) => {
           <li>Support</li>
         </ul>
       </div>
+      
+      {/* Divider */}
       <div className="menu-horizontal-divider"></div>
+      
       {/* CTA buttons */}
       <div className="menu-cta-buttons">
         <div>
