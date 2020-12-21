@@ -27,6 +27,7 @@
 
 .post-body {
   width: 1200px !important;
+  margin-bottom: 80px !important;
 }
 
 /* --------------------- Responsive --------------------- */
@@ -42,6 +43,7 @@
   
   .post-body img {
     max-width: 90vw !important;
+    height: auto;
   }
 }
 
@@ -75,8 +77,13 @@
   color: #322E3B;
 }
 
+.post-body p {
+  padding-bottom: 10px;
+}
+
 .post-body ul {
   list-style-type: disc;
+  margin: 20px 0;
 }
 
 .post-body li {
@@ -149,6 +156,14 @@
 
 .post-body table {
   width: 100%;
+}
+
+.post-body img {
+  margin: 40px 0;
+}
+
+.post-body a {
+  margin: 20px 0;
 }
 
 

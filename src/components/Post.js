@@ -1,17 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import RelatedPosts from './RelatedPosts';
 import Loading from './Loading';
 import axios from 'axios';
 import './Post.css';
 
 const Post = (props) => {
   const POST_URL = `https://backend.seerplatform.com/content-types/blog/${props.match.params.postId}`;
+  const BLOG_URL = 'https://backend.seerplatform.com/content-types/blog';
   
   const currentPage = localStorage.getItem('currentPage');
   
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [body, setBody] = useState(null);
+  const [relatedPosts, setRelatedPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   
   // Get selected post from backend when DOM is ready (componentDidMount)
@@ -23,6 +26,15 @@ const Post = (props) => {
       setDate(post.created_at.slice(0, 10));
       setBody(post.body);
       setIsLoading(false);
+    })
+    .catch(err => console.log(err));
+  }, []);
+  
+  useEffect(() => {
+    axios.get(BLOG_URL)
+    .then(res => {
+      const resPosts = res.data.data.content_type.contents;
+      setRelatedPosts(resPosts.slice(0, 3));
     })
     .catch(err => console.log(err));
   }, []);
@@ -63,6 +75,11 @@ const Post = (props) => {
           <div
             className="post-body"
             dangerouslySetInnerHTML={{__html: body}}
+          />
+          
+          {/* Related posts */}
+          <RelatedPosts
+            posts={relatedPosts}
           />
         </>
       }

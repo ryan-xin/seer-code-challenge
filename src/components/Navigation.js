@@ -15,7 +15,7 @@ const Navigation = (props) => {
       <div>
         <img
           className="nav-logo"
-          src="/seer_logo_color@2x.png"
+          src="./seer_logo_color@2x.png"
           alt="Seer logo"
         />
       </div>

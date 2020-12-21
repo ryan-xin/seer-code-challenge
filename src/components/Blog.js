@@ -83,7 +83,7 @@ const Blog = (props) => {
           behavior: 'smooth'
         });
         localStorage.removeItem('scrollPosition');
-      }, 140);
+      }, 300);
     }
   });
   

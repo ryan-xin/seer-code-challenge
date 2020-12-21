@@ -1,0 +1,46 @@
+.related-posts-container {
+  background-color: #EEEDF4;
+  padding: 100px 0;
+}
+
+.related-posts-content-wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.related-posts-content-wrapper h3 {
+  margin-bottom: 50px;
+}
+
+.related-posts-list-container {
+  display: flex;
+  gap: 40px;
+}
+
+/* --------------------- Responsive --------------------- */
+
+@media screen and (max-width: 1280px) {
+  .related-posts-content-wrapper {
+    width: 90vw;
+  }
+
+  .related-posts-list-container {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .related-posts-container {
+    background-color: #EEEDF4;
+    padding: 60px 0;
+  }
+  
+  .related-posts-list-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .related-posts-content-wrapper h3 {
+    margin-bottom: 40px;
+  }
+}
