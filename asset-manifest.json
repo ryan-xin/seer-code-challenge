@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/seer-code-challenge/static/css/main.c525d99d.chunk.css",
-    "main.js": "/seer-code-challenge/static/js/main.b22411db.chunk.js",
-    "main.js.map": "/seer-code-challenge/static/js/main.b22411db.chunk.js.map",
+    "main.js": "/seer-code-challenge/static/js/main.df397766.chunk.js",
+    "main.js.map": "/seer-code-challenge/static/js/main.df397766.chunk.js.map",
     "runtime-main.js": "/seer-code-challenge/static/js/runtime-main.12e6b04a.js",
     "runtime-main.js.map": "/seer-code-challenge/static/js/runtime-main.12e6b04a.js.map",
     "static/js/2.6a0a92ef.chunk.js": "/seer-code-challenge/static/js/2.6a0a92ef.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.12e6b04a.js",
     "static/js/2.6a0a92ef.chunk.js",
     "static/css/main.c525d99d.chunk.css",
-    "static/js/main.b22411db.chunk.js"
+    "static/js/main.df397766.chunk.js"
   ]
 }
