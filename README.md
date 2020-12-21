@@ -38,13 +38,11 @@ React; JavaScript; HTML; CSS; axios.
 ### How to Use ###
 
 Download project folder:
-``` 
 
-In terminal, got project folder:
+In terminal, go to project folder:
 ``` 
  $ npm install
- $ npm start
  ```
+ $ npm start
 
 Open 'http://localhost:3000' in browser:
-``` 
