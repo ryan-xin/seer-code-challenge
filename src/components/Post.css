@@ -1,14 +1,15 @@
 .post-header {
   background-color: #6C3563;
   margin-top: 113px;
-  margin-bottom: 100px;
-  padding: 100px 40px 40px;
+  margin-bottom: 80px;
+  padding: 100px 0;
   position: relative;
 }
 
 .bread-crumbs {
   position: absolute;
   top: 40px;
+  left: 40px;
 }
 
 .post-header-content-wrapper {
@@ -24,19 +25,31 @@
   margin-bottom: 20px;
 }
 
+.post-body {
+  width: 1200px !important;
+}
+
 /* --------------------- Responsive --------------------- */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .post-header-content-wrapper {
     width: 90vw;
+  }
+  
+  .post-body {
+    max-width: 90vw !important;
+  }
+  
+  .post-body img {
+    max-width: 90vw !important;
   }
 }
 
 @media screen and (max-width: 768px) {
   .post-header {
     margin-top: 113px;
-    margin-bottom: 80px;
-    padding: 60px 40px 40px;
+    margin-bottom: 40px;
+    padding: 60px;
   }
   
   .post-header-content h1 {

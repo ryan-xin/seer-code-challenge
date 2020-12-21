@@ -2,7 +2,7 @@
   background-color: #6C3563;
   margin-top: 113px;
   margin-bottom: 100px;
-  padding: 140px 40px 100px;
+  padding: 140px 0;
 }
 
 .banner-content-wrapper {
@@ -25,7 +25,11 @@
 
 /* --------------------- Responsive --------------------- */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
+  .banner {
+    padding: 100px 0;
+  }
+  
   .banner-content-wrapper {
     width: 90vw;
   }
@@ -35,11 +39,16 @@
   .banner {
     margin-top: 113px;
     margin-bottom: 80px;
-    padding: 60px 40px 60px;
+    padding: 40px;
   }
 }
 
 @media screen and (max-width: 670px) {
+  .banner {
+    padding: 40px 20px;
+    margin-bottom: 60px;
+  }
+  
   .banner-content {
     width: 80%;
   }

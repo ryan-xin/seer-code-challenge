@@ -1,5 +1,5 @@
 .post-block-item {
-  width: 570px;
+  flex-basis: 570px;
 }
 
 .post-thumbnail {
@@ -12,14 +12,36 @@
   margin-bottom: 15px;
 }
 
+.post-block-item p {
+  margin-bottom: 15px;
+}
+
 .post-block-item h2:hover {
   color: #C5344E;
 }
 
 /* --------------------- Responsive --------------------- */
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
   .post-block-item {
-    flex: auto;
+    flex-basis: 48%;
+  }
+}
+
+@media screen and (max-width: 1111px) {
+  .post-block-item {
+    flex-basis: 48%;
+  }
+}
+
+@media screen and (max-width: 833px) {
+  .post-block-item {
+    flex-basis: 47%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .post-block-item {
+    flex-basis: auto;
   }
 }
