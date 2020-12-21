@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/ryan-xin/seer-code-challenge/static/css/main.c525d99d.chunk.css",
-    "main.js": "/ryan-xin/seer-code-challenge/static/js/main.b22411db.chunk.js",
-    "main.js.map": "/ryan-xin/seer-code-challenge/static/js/main.b22411db.chunk.js.map",
-    "runtime-main.js": "/ryan-xin/seer-code-challenge/static/js/runtime-main.fb70a568.js",
-    "runtime-main.js.map": "/ryan-xin/seer-code-challenge/static/js/runtime-main.fb70a568.js.map",
-    "static/js/2.6a0a92ef.chunk.js": "/ryan-xin/seer-code-challenge/static/js/2.6a0a92ef.chunk.js",
-    "static/js/2.6a0a92ef.chunk.js.map": "/ryan-xin/seer-code-challenge/static/js/2.6a0a92ef.chunk.js.map",
-    "static/js/3.2d29b1c2.chunk.js": "/ryan-xin/seer-code-challenge/static/js/3.2d29b1c2.chunk.js",
-    "static/js/3.2d29b1c2.chunk.js.map": "/ryan-xin/seer-code-challenge/static/js/3.2d29b1c2.chunk.js.map",
-    "index.html": "/ryan-xin/seer-code-challenge/index.html",
-    "static/css/main.c525d99d.chunk.css.map": "/ryan-xin/seer-code-challenge/static/css/main.c525d99d.chunk.css.map",
-    "static/js/2.6a0a92ef.chunk.js.LICENSE.txt": "/ryan-xin/seer-code-challenge/static/js/2.6a0a92ef.chunk.js.LICENSE.txt"
+    "main.css": "/seer-code-challenge/static/css/main.c525d99d.chunk.css",
+    "main.js": "/seer-code-challenge/static/js/main.b22411db.chunk.js",
+    "main.js.map": "/seer-code-challenge/static/js/main.b22411db.chunk.js.map",
+    "runtime-main.js": "/seer-code-challenge/static/js/runtime-main.12e6b04a.js",
+    "runtime-main.js.map": "/seer-code-challenge/static/js/runtime-main.12e6b04a.js.map",
+    "static/js/2.6a0a92ef.chunk.js": "/seer-code-challenge/static/js/2.6a0a92ef.chunk.js",
+    "static/js/2.6a0a92ef.chunk.js.map": "/seer-code-challenge/static/js/2.6a0a92ef.chunk.js.map",
+    "static/js/3.2d29b1c2.chunk.js": "/seer-code-challenge/static/js/3.2d29b1c2.chunk.js",
+    "static/js/3.2d29b1c2.chunk.js.map": "/seer-code-challenge/static/js/3.2d29b1c2.chunk.js.map",
+    "index.html": "/seer-code-challenge/index.html",
+    "static/css/main.c525d99d.chunk.css.map": "/seer-code-challenge/static/css/main.c525d99d.chunk.css.map",
+    "static/js/2.6a0a92ef.chunk.js.LICENSE.txt": "/seer-code-challenge/static/js/2.6a0a92ef.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.fb70a568.js",
+    "static/js/runtime-main.12e6b04a.js",
     "static/js/2.6a0a92ef.chunk.js",
     "static/css/main.c525d99d.chunk.css",
     "static/js/main.b22411db.chunk.js"
