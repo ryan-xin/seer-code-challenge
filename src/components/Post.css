@@ -24,6 +24,32 @@
   margin-bottom: 20px;
 }
 
+/* --------------------- Responsive --------------------- */
+
+@media screen and (max-width: 1200px) {
+  .post-header-content-wrapper {
+    width: 90vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-header {
+    margin-top: 113px;
+    margin-bottom: 80px;
+    padding: 60px 40px 40px;
+  }
+  
+  .post-header-content h1 {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .post-header-content {
+    width: 80%;
+  }
+}
+
 /* ---------------------- Post Body --------------------- */
 
 .post-body {
