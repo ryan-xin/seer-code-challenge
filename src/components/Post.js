@@ -5,7 +5,7 @@ import axios from 'axios';
 import './Post.css';
 
 const Post = (props) => {
-  const POST_URL = `http://backend.seerplatform.com/content-types/blog/${props.match.params.postId}`;
+  const POST_URL = `https://backend.seerplatform.com/content-types/blog/${props.match.params.postId}`;
   
   const currentPage = localStorage.getItem('currentPage');
   

@@ -7,7 +7,7 @@ import axios from 'axios';
 import './Blog.css';
 
 const Blog = (props) => {
-  const BLOG_URL = 'http://backend.seerplatform.com/content-types/blog';
+  const BLOG_URL = 'https://backend.seerplatform.com/content-types/blog';
   const blogBanner = {
     title: 'Seer Blog',
     description: 'News, articles and insightful stories dedicated to prepare you for your future decisions.'
