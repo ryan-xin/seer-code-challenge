@@ -66,3 +66,19 @@
     cursor: pointer;
   }
 }
+
+@media screen and (max-width: 660px) {
+  .main-nav {
+    padding: 20px;
+  }
+  
+  .nav-cta-container {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .nav-responsive-mobile {
+    display: none;
+  }
+}

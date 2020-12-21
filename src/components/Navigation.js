@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Menu from './Menu';
 import './Navigation.css';
 
 const Navigation = (props) => {
+  const [menuShow, setMenuShow] = useState(false);
+  
+  const controlMenuHandler = (value) => {
+    setMenuShow(value);
+  }
+  
   return(
     <nav className="main-nav nav-container">
       {/* Logo section */}
@@ -23,14 +30,18 @@ const Navigation = (props) => {
         <div className="vertical-divider nav-desktop"></div>
         {/* CTA buttons */}
         <div className="nav-cta-container">
-          <span className="link text-color-secondary">Sign In</span>
-          <button className="button-primary">Get Started for Free</button>
-        </div>
-        {/* Responsive Menu Button */}
-        <div className="nav-responsive menu-icon">
-          <img src="/menu_icon.svg" alt="Menu" />
+          <span className="link text-color-secondary nav-responsive-mobile">Sign In</span>
+          <button className="button-primary nav-responsive-mobile">Get Started for Free</button>
+          {/* Responsive Menu Button */}
+          <div className="nav-responsive menu-icon" onClick={() => controlMenuHandler(true)}>
+            <img src="/menu_icon.svg" alt="Menu" />
+          </div>
         </div>
       </div>
+      {/* Show / Hide responsive menu */}
+      {
+        menuShow && <Menu closeMenu={controlMenuHandler} />
+      }
     </nav>
   )
 }

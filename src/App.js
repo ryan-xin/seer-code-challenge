@@ -10,8 +10,8 @@ function App() {
     <>
       <Router>
         <Navigation />
-        <Route exact path={["/", "/blog", "/blog/:pageNum"]} component={Blog} />
-        <Route exact path="/blog/post/:postId" component={Post} />
+        {/* <Route exact path={["/", "/blog", "/blog/:pageNum"]} component={Blog} />
+        <Route exact path="/blog/post/:postId" component={Post} /> */}
         <Footer />
       </Router>
     </>
