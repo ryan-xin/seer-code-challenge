@@ -65,7 +65,7 @@ const Post = (props) => {
             
             <div className="post-header-content-wrapper">
               <div className="post-header-content">
-                <h1 className="text-color-white">{title}</h1>
+                <h2 className="text-color-white">{title}</h2>
                 <p>{date}</p>
               </div>
             </div>

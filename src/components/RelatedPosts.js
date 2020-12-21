@@ -1,5 +1,4 @@
 import React from 'react';
-import PostBlock from './PostBlock';
 import RelatedPostBlock from './RelatedPostBlock';
 import './RelatedPosts.css';
 

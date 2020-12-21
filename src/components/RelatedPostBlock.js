@@ -5,10 +5,16 @@ import './RelatedPostBlock.css';
 const RelatedPostBlock = (props) => {
   const POST_PATH = `/blog/post/${props.id}`;
   
+  // Force reload the page to avoid 'Hash history cannot PUSH the same path; a new entry will not be added to the history stack' problem
+  const reloadPage = () => {
+    window.location.reload(false);
+    window.scrollTo(0, 0);
+  };
+  
   return(
     <div className="related-post-block-item">
-      {/* Blog post thumbnail */}
-      <Link to={POST_PATH}>
+      {/* Related blog post thumbnail */}
+      <Link to={POST_PATH} onClick={reloadPage}>
         <div className="thumbnail-container">
           <img
             className="post-thumbnail"
@@ -18,10 +24,12 @@ const RelatedPostBlock = (props) => {
         </div>
       </Link>
       
-      {/* Blog post title */}  
+      {/* Related blog post title */}  
       <Link
         className="no-underline-link"
-        to={POST_PATH}>
+        to={POST_PATH}
+        onClick={reloadPage}
+      >
         <h4
           className="text-color-darkgrey post-title-link"
         >
@@ -29,13 +37,14 @@ const RelatedPostBlock = (props) => {
         </h4>
       </Link>
       
-      {/* Blog post description */}
+      {/* Related blog post description */}
       <p className="related-post-description text-color-darkgrey">{props.description}</p>
       
-      {/* Blog post cta button */}
+      {/* Related blog post cta button */}
       <Link
         className="link text-color-secondary"
         to={POST_PATH}
+        onClick={reloadPage}
       >
         Read More
       </Link>

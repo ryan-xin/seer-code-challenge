@@ -1,8 +1,8 @@
 .post-header {
   background-color: #6C3563;
   margin-top: 113px;
-  margin-bottom: 80px;
-  padding: 100px 0;
+  margin-bottom: 60px;
+  padding: 100px 0 60px;
   position: relative;
 }
 
@@ -21,7 +21,7 @@
   width: 600px;
 }
 
-.post-header-content h1 {
+.post-header-content h2 {
   margin-bottom: 20px;
 }
 
@@ -34,7 +34,7 @@
 
 @media screen and (max-width: 1280px) {
   .post-header-content-wrapper {
-    width: 90vw;
+    width: 85vw;
   }
   
   .post-body {
@@ -42,7 +42,7 @@
   }
   
   .post-body img {
-    max-width: 90vw !important;
+    max-width: 85vw !important;
     height: auto;
   }
 }
@@ -51,15 +51,23 @@
   .post-header {
     margin-top: 113px;
     margin-bottom: 40px;
-    padding: 60px;
+    padding: 60px 40px;
   }
   
-  .post-header-content h1 {
+  .post-header-content h2 {
     margin-top: 20px;
   }
 }
 
 @media screen and (max-width: 670px) {
+  .bread-crumbs {
+    left: 20px;
+  }
+  
+  .post-header {
+    padding: 60px 20px;
+  }
+  
   .post-header-content {
     width: 80%;
   }
