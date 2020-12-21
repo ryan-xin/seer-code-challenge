@@ -34,3 +34,17 @@ Rewrite Seer Blog using React - Blog Index Page and Blog Post Page.
 ### Tech Used ###
 
 React; JavaScript; HTML; CSS; axios.
+
+### How to Use ###
+
+Download project folder:
+``` 
+
+In terminal, got project folder:
+``` 
+ $ npm install
+ $ npm start
+ ```
+
+Open 'http://localhost:3000' in browser:
+``` 
