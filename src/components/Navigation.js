@@ -13,7 +13,11 @@ const Navigation = (props) => {
     <nav className="main-nav nav-container">
       {/* Logo section */}
       <div>
-        <img className="nav-logo" src="/seer_logo_color@2x.png" alt="Seer logo" />
+        <img
+          className="nav-logo"
+          src="./seer_logo_color@2x.png"
+          alt="Seer logo"
+        />
       </div>
       <div className="nav-link-container">
       
