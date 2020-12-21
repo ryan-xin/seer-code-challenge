@@ -9,13 +9,42 @@ const Post = (props) => {
   const POST_URL = `https://backend.seerplatform.com/content-types/blog/${props.match.params.postId}`;
   const BLOG_URL = 'https://backend.seerplatform.com/content-types/blog';
   
+  const currentPostId = parseInt(props.match.params.postId);
   const currentPage = localStorage.getItem('currentPage');
   
   const [title, setTitle] = useState('');
   const [date, setDate] = useState('');
   const [body, setBody] = useState(null);
-  const [relatedPosts, setRelatedPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [relatedPosts, setRelatedPosts] = useState([]);
+  
+  const getRelatedPosts = (posts, authorId, postId) => {
+    // Remove current post from all posts
+    posts = posts.filter(post => {
+      return post.id !== postId;
+    })
+    
+    let relatedPosts = [];
+    // If authorId is not null, filter all posts with same authorId;
+    if (authorId) {
+      relatedPosts = posts.filter(post => {
+        return post.author_id === authorId;
+      })
+    }
+    
+    // If relatedPosts is more than 3 just show first 3
+    const length = relatedPosts.length;
+    if(length >= 3) {
+      return relatedPosts.slice(0, 3);
+    // If relatedPosts is less than 3 push latest posts to relatedPosts to make it 3
+    } else {
+      for (let i = 0; i < (3 - length); i++) {
+        relatedPosts.push(posts[i]);
+      }
+      console.log(relatedPosts);
+      return relatedPosts;
+    }
+  };
   
   // Get selected post from backend when DOM is ready (componentDidMount)
   useEffect(() => {
@@ -26,15 +55,12 @@ const Post = (props) => {
       setDate(post.created_at.slice(0, 10));
       setBody(post.body);
       setIsLoading(false);
-    })
-    .catch(err => console.log(err));
-  }, []);
-  
-  useEffect(() => {
-    axios.get(BLOG_URL)
-    .then(res => {
-      const resPosts = res.data.data.content_type.contents;
-      setRelatedPosts(resPosts.slice(0, 3));
+      // Get related posts
+      axios.get(BLOG_URL)
+      .then(res => {
+        const resPosts = res.data.data.content_type.contents;
+        setRelatedPosts(getRelatedPosts(resPosts, post.author_id, currentPostId));
+      })
     })
     .catch(err => console.log(err));
   }, []);
