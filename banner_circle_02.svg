@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="530px" height="372px" viewBox="0 0 530 372" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>banner_circle_02</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="530" height="372"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="seer_blog_index_desktop_hd" transform="translate(-815.000000, -273.000000)">
+            <g id="banner_circle_02" transform="translate(815.000000, 273.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <path d="M245,0 C380.309764,0 490,109.690236 490,245 C490,380.309764 380.309764,490 245,490 C109.690236,490 0,380.309764 0,245 C0,109.690236 109.690236,0 245,0 Z M247.5,71 C150.021742,71 71,150.021742 71,247.5 C71,344.978258 150.021742,424 247.5,424 C344.978258,424 424,344.978258 424,247.5 C424,150.021742 344.978258,71 247.5,71 Z" id="Combined-Shape" fill="#7D4173" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
