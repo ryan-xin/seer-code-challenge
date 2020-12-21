@@ -20,12 +20,16 @@ Rewrite Seer Blog using React - Blog Index Page and Blog Post Page.
 * Circle elements to match Seer branding and show Seer is easily accessible;
 * Click 'Back' button on blog post page goes back to blog index page and previous scroll position;
 * Hide 'Left Arrow' button on page 1 and hide 'Right Arrow' button on the last page;
+* Show 3 related posts on blog post page;
+* Show/Hide burger menu based on screen width;
+* Go back to previous scroll position after clicking 'Back to Blog' button on blog post page;
 
 ### To Do List ###
 
 * Learn Redux or alternatives to store states instead of using localStorage;
 * Improve Pagination component: show '...' when there are too many pages;
-* Add animation transition for better user experience;
+* Add more animation transition for better user experience;
+* Fix 'Blog' link on navigation: it should lead to the first page of blog
 
 ### Tech Used ###
 

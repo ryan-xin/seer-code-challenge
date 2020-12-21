@@ -10,9 +10,16 @@ const Navigation = (props) => {
     setMenuShow(value);
   };
   
-  const reloadPage = () => {
-    window.location.reload(false);
-    window.scrollTo(0, 0);
+  const clearCurrentPage = () => {
+    // When Blog link on nav is clicked, currentPage in localStorage needs to be 1
+    localStorage.setItem('currentPage', 1);
+    // scrollPosition needs to be removed
+    localStorage.removeItem('scrollPosition');
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   };
   
   return(
@@ -33,8 +40,7 @@ const Navigation = (props) => {
             <li>Why Seer</li>
             <li>Pricing</li>
             <li>Customer</li>
-            <li className="current-nav-link" onClick={reloadPage}>Blog</li>
-            <Link to={'/blog'} onClick={reloadPage}><li className="current-nav-link">Blog</li></Link>
+            <Link to={'/blog'} onClick={clearCurrentPage}><li className="current-nav-link">Blog</li></Link>
             <li>Support</li>
           </ul>
         </div>
