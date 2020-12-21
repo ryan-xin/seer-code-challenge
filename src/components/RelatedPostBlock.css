@@ -20,13 +20,14 @@
 
 .related-post-block-item h4 {
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.post-block-item p {
+.related-post-block-item p {
   margin-bottom: 15px;
 }
 
-.post-block-item h2:hover {
+.related-post-block-item h4:hover {
   color: #C5344E;
 }
 

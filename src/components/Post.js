@@ -53,6 +53,7 @@ const Post = (props) => {
               backgroundColor: '#6C3563'
             }}
           >
+          
             {/* Back to Blog button */}
             <div className="bread-crumbs">
               <Link
