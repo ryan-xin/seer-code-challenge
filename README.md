@@ -44,6 +44,5 @@ React; JavaScript; HTML; CSS; axios.
  $ npm install
  ```
  $ npm start
-```
 
 3. Open 'http://localhost:3000' in browser
