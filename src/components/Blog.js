@@ -69,8 +69,11 @@ const Blog = (props) => {
     const scrollPosition = localStorage.getItem('scrollPosition');
     if(scrollPosition) {
       setTimeout(() => {
-        console.log(scrollPosition);
-        window.scrollTo({top: parseInt(scrollPosition), left: 0, behavior: 'smooth'});
+        window.scrollTo({
+          top: parseInt(scrollPosition),
+          left: 0,
+          behavior: 'smooth'
+        });
         localStorage.removeItem('scrollPosition');
       }, 140);
     }
@@ -83,6 +86,7 @@ const Blog = (props) => {
   
   return(
     <>
+      {/* Blog top banner */}
       <Banner 
         title={blogBanner.title}
         description={blogBanner.description}
@@ -91,11 +95,13 @@ const Blog = (props) => {
         isLoading ? 
         <Loading /> :
         <div className="blog-container">
+          {/* Blog posts list */}
           <div className="blog-list-container">
             <PostList 
               posts={displayedPosts}
             />
           </div>
+          {/* Pagination */}
           <Pagination 
             pages={pages}
             currentPage={currentPage}

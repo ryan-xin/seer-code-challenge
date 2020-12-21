@@ -2,10 +2,20 @@
   flex-basis: 570px;
 }
 
-.post-thumbnail {
+.thumbnail-container {
   width: 100%;
-  border: 1px solid #E3E1E9;
   margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.post-thumbnail {
+  border: 1px solid #E3E1E9;
+  width: 100%;
+  transition: all 0.7s;
+}
+
+.thumbnail-container img:hover {
+  transform: scale(1.08);
 }
 
 .post-block-item h2 {
@@ -35,12 +45,6 @@
 }
 
 @media screen and (max-width: 833px) {
-  .post-block-item {
-    flex-basis: 47%;
-  }
-}
-
-@media screen and (max-width: 600px) {
   .post-block-item {
     flex-basis: auto;
   }

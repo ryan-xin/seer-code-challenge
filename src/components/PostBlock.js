@@ -7,20 +7,43 @@ const PostBlock = (props) => {
   
   // Save current scroll position to localstorage
   const saveScrollPosition = () => {
-    console.log(window.pageYOffset);
     localStorage.setItem('scrollPosition', window.pageYOffset);
   };
   
   return(
     <div className="post-block-item">
+      {/* Blog post thumbnail */}
       <Link to={POST_PATH}>
-        <img onClick={saveScrollPosition} className="post-thumbnail" src={props.banner} alt={props.title} />
+        <div className="thumbnail-container">
+          <img
+            onClick={saveScrollPosition}
+            className="post-thumbnail"
+            src={props.banner}
+            alt={props.title} />
+        </div>
       </Link>
-      <Link className="no-underline-link" to={POST_PATH}>
-        <h2 onClick={saveScrollPosition} className="text-color-darkgrey post-title-link">{props.title}</h2>
+      
+      {/* Blog post title */}
+      <Link
+        className="no-underline-link"
+        to={POST_PATH}>
+        <h2
+          onClick={saveScrollPosition}
+          className="text-color-darkgrey post-title-link">
+          {props.title}
+        </h2>
       </Link>
+      
+      {/* Blog post description */}
       <p className="text-color-darkgrey">{props.description}</p>
-      <Link className="link text-color-secondary" onClick={saveScrollPosition} to={POST_PATH}>Read More</Link>
+      
+      {/* Blog post cta button */}
+      <Link
+        className="link text-color-secondary"
+        onClick={saveScrollPosition}
+        to={POST_PATH}>
+        Read More
+      </Link>
     </div>
   )
 }
