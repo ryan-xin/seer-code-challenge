@@ -10,8 +10,6 @@ Rewrite Seer Blog using React - Blog Index Page and Blog Post Page.
 * Blog page needs to display maximum of 3 related blog posts that have similar titles;
 * Design should be responsive;
 
-Here is the live [website.](https://ryan-xin.github.io/covid-19-tracker-frontend)
-
 ![Screenshot of the website:](https://github.com/ryan-xin/seer-code-challenge/blob/main/public/seer_challenge_blog_page.png)
 ![Screenshot of the website:](https://github.com/ryan-xin/seer-code-challenge/blob/main/public/seer_challenge_post_page.png)
 
