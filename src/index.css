@@ -113,3 +113,12 @@ p {
 .no-underline-link {
   text-decoration: none;
 }
+
+/* --------------------- Responsive --------------------- */
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 44px;
+    line-height: 50px;
+  }
+}

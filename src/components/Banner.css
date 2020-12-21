@@ -30,3 +30,17 @@
     width: 90vw;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .banner {
+    margin-top: 113px;
+    margin-bottom: 80px;
+    padding: 60px 40px 60px;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .banner-content {
+    width: 80%;
+  }
+}
