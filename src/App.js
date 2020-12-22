@@ -1,8 +1,8 @@
 import {Route, HashRouter as Router} from 'react-router-dom';
-import Navigation from './components/Navigation';
-import Footer from './components/Footer';
-import Blog from './components/Blog';
-import Post from './components/Post';
+import Navigation from './components/common/Navigation/Navigation';
+import Footer from './components/common/Footer/Footer';
+import Blog from './components/pages/Blog/Blog';
+import Post from './components/pages/Post/Post';
 
 function App() {
   return (

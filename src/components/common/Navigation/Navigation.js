@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import Menu from './Menu';
+import Menu from '../Menu/Menu';
 import './Navigation.css';
 
 const Navigation = (props) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import RelatedPostBlock from './RelatedPostBlock';
+import RelatedPostBlock from '../RelatedPostBlock/RelatedPostBlock';
 import './RelatedPosts.css';
 
 const RelatedPosts = (props) => {

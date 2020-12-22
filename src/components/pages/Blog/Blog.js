@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import Banner from './Banner';
-import PostList from './PostList';
-import Pagination from './Pagination';
-import Loading from './Loading';
+import Banner from '../../common/Banner/Banner';
+import PostList from '../../common/PostList/PostList';
+import Pagination from '../../common/Pagination/Pagination';
+import Loading from '../../common/Loading/Loading';
 import axios from 'axios';
 import './Blog.css';
 

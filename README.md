@@ -23,7 +23,7 @@ Rewrite Seer Blog using React - Blog Index Page and Blog Post Page.
 * Show/Hide burger menu based on screen width;
 * Hover effect added for better user experience;
 * Responsive for different screen width;
-* Show 3 related posts on blog post page: the ideal way to show related posts is to add 'category' key in json data, so I use 'author_id' to mock this request. 'Similar posts' should have same 'author_id'. If there are more than 3 similar posts just show the first 3, if there are less than 3 add the latest posts to it to make it 3. All similar posts are not including itself.
+* Show 3 related posts on blog post page: compare 2 posts' title. If there are more than 2 same words in the titles, the 2 posts are similar posts. If one post has more than 3 similar posts just show the first 3, if the post has less than 3 add the latest posts to it to make it 3. All similar posts are not including itself.
 
 ### To Do List ###
 
@@ -31,6 +31,7 @@ Rewrite Seer Blog using React - Blog Index Page and Blog Post Page.
 * Improve Pagination component: show '...' when there are too many pages;
 * Add more animation transition for better user experience;
 * Overwrite all blog post body HTML & CSS to improve layout & readability;
+* Don't have much experience in testing, each component should have unit test;
 
 ### Tech Used ###
 

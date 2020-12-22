@@ -1,5 +1,5 @@
 import React from 'react';
-import PostBlock from './PostBlock';
+import PostBlock from '../PostBlock/PostBlock';
 
 const PostList = (props) => {
   return(
