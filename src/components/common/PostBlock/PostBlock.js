@@ -6,7 +6,7 @@ const PostBlock = (props) => {
   const {id, banner, title, description} = props;
   const POST_PATH = `/blog/post/${id}`;
   
-  // Save current scroll position to localstorage
+  // Save current scroll position to localStorage
   const saveScrollPosition = () => {
     localStorage.setItem('scrollPosition', window.pageYOffset);
   };

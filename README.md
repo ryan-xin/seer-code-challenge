@@ -30,7 +30,7 @@ Rewrite Seer Blog using React - Blog Index Page and Blog Post Page.
 * Learn Redux or alternatives to store states instead of using localStorage;
 * Improve Pagination component: show '...' when there are too many pages;
 * Add more animation transition for better user experience;
-* Overwrite all blog post body HTML & CSS to improve layout & readability;
+* Overwrite all blog post body CSS to improve layout & readability;
 * Don't have much experience in testing, each component should have unit test;
 
 ### Tech Used ###
