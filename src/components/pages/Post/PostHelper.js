@@ -5,18 +5,16 @@ export const getPost = (response) => {
 export const getAllPosts = (response) => {
   return response.data.data.content_type.contents;
 };
-  
-export const getRelatedPosts = (posts, currentPost) => {
-  // Remove current post from all posts
-  posts = posts.filter(post => {
-    return post.id !== currentPost.id;
-  })
-  
-  let relatedPosts = [];
-  relatedPosts = posts.filter(post => {
+
+const generateWordsArray = (string) => {
+  return string.title.toLocaleLowerCase().split(' ').sort();
+};
+
+const getSimilarPosts = (posts, currentPost) => {
+  return posts.filter(post => {
     // Make current post and each post title to sorted lowercase array
-    const titleArray1 = currentPost.title.toLocaleLowerCase().split(' ').sort();
-    const titleArray2 = post.title.toLocaleLowerCase().split(' ').sort();
+    const titleArray1 = generateWordsArray(currentPost);
+    const titleArray2 = generateWordsArray(post);
     // Get same words array
     const sameWorldArray = titleArray1.filter(word => {
       return titleArray2.includes(word);
@@ -24,6 +22,17 @@ export const getRelatedPosts = (posts, currentPost) => {
     // Return if sameWorldArray has equal or more than 2 words
     return sameWorldArray.length >= 2;
   });
+};
+  
+export const getRelatedPosts = (posts, currentPost) => {
+  // Remove current post from all posts
+  posts = posts.filter(post => {
+    return post.id !== currentPost.id;
+  })
+  
+  // Get related posts
+  let relatedPosts = [];
+  relatedPosts = getSimilarPosts(posts, currentPost);
   
   // If relatedPosts is more than 3 just show first 3
   const length = relatedPosts.length;

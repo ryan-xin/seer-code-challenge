@@ -3,28 +3,9 @@ import Banner from '../../common/Banner/Banner';
 import PostList from '../../common/PostList/PostList';
 import Pagination from '../../common/Pagination/Pagination';
 import Loading from '../../common/Loading/Loading';
+import { getAllPosts, getPageNumber, getTenPosts, windowScrollPosition } from './BlogHelper';
 import axios from 'axios';
 import './Blog.css';
-
-const getAllPosts = (response) => {
-  return response.data.data.content_type.contents;
-};
-
-const getPageNumber = (posts) => {
-  return Math.round(posts.length / 10);
-};
-
-const getTenPosts = (posts, pageNum) => {
-  return posts.slice((pageNum - 1) * 10, (pageNum * 10));
-};
-
-const windowScrollPosition = (y) => {
-  window.scrollTo({
-    top: y,
-    left: 0,
-    behavior: 'smooth'
-  });
-};
 
 const Blog = (props) => {
   const BLOG_URL = 'https://backend.seerplatform.com/content-types/blog';

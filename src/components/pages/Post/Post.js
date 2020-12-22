@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import RelatedPosts from '../../common/RelatedPosts/RelatedPosts';
 import Loading from '../../common/Loading/Loading';
-import {getPost, getAllPosts, getRelatedPosts} from './PostHelper';
+import { getPost, getAllPosts, getRelatedPosts } from './PostHelper';
 import axios from 'axios';
 import './Post.css';
 

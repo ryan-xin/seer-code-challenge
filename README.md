@@ -23,7 +23,7 @@ Rewrite Seer Blog using React - Blog Index Page and Blog Post Page.
 * Show/Hide burger menu based on screen width;
 * Hover effect added for better user experience;
 * Responsive for different screen width;
-* Show 3 related posts on blog post page: compare 2 posts' title. If there are more than 2 same words in the titles, the 2 posts are similar posts. If one post has more than 3 similar posts just show the first 3, if the post has less than 3 add the latest posts to it to make it 3. All similar posts are not including itself.
+* Show 3 related posts on blog post page: compare 2 posts' titles. If there are equal or more than 2 same words in the titles, the 2 posts are related posts. If one post has more than 3 related posts just show the first 3, if the post has less than 3 add the latest posts to it to make it 3. All related posts are not including itself.
 
 ### To Do List ###
 
@@ -49,4 +49,4 @@ React; JavaScript; HTML; CSS; axios.
  $ npm start
 ```
 
-3. Open 'http://localhost:3000' in browser
+3. Open 'http://localhost:3000/' in browser
