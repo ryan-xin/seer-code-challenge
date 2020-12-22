@@ -3,11 +3,13 @@ import { useHistory } from 'react-router-dom';
 import './Pagination.css';
 
 const Pagination = (props) => {
+  const {pages, currentPage, setPage, changePage} = props;
+  
   // Use props.pages to render page number buttons
   const pageButtons = [];
-  for (let i = 1; i <= props.pages; i++) {
+  for (let i = 1; i <= pages; i++) {
     // Set selected class(current-page) to props.currentPage number button
-    if(i === props.currentPage) {
+    if(i === currentPage) {
       pageButtons.push(
         <div
           className="current-page"
@@ -38,16 +40,14 @@ const Pagination = (props) => {
   
   // Lifting State num to parent to setCurrentPage: '-1' stands for clicking PrevPage Button; '1' stands for clicking PrevPage Button
   const changePageHandler = (num) => {
-    const currentPage = props.currentPage;
-    
     // Only trigger PrevPage Button when props.currentPage is bigger than 1
     if(num === -1 && currentPage > 1) {
-      props.changePage(num);
+      changePage(num);
     }
     
     // Only trigger NextPage Button when props.currentPage is smaller than total pages(props.pages)
-    if(num === 1 && currentPage < props.pages) {
-      props.changePage(num);
+    if(num === 1 && currentPage < pages) {
+      changePage(num);
     }
     
     history.push(`/blog/${currentPage + num}`);
@@ -55,7 +55,7 @@ const Pagination = (props) => {
   
   // Lifting State num to parent to setCurrentPage: num is the selected page number
   const setPageHandler = (num) => {
-    props.setPage(num);
+    setPage(num);
     history.push(`/blog/${num}`)
   };
   
@@ -64,7 +64,7 @@ const Pagination = (props) => {
       <div className="pagination-container">
         {/* Hide PrevPage Button when props.currentPage is the first page */}
         {
-          props.currentPage === 1 ? 
+          currentPage === 1 ? 
           null : 
           <div
             className="unselected-page"
@@ -81,7 +81,7 @@ const Pagination = (props) => {
         
         {/* Hide NextPage Button when props.currentPage is the last page */}
         {
-          props.currentPage === props.pages ? 
+          currentPage === pages ? 
           null : 
           <div
             className="unselected-page"

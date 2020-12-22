@@ -3,7 +3,8 @@ import { useHistory } from 'react-router-dom';
 import './RelatedPostBlock.css';
 
 const RelatedPostBlock = (props) => {
-  const POST_PATH = `/blog/post/${props.id}`;
+  const {id, banner, title, description} = props;
+  const POST_PATH = `/blog/post/${id}`;
   
   const history = useHistory();
   // Force reload the page to avoid 'Hash history cannot PUSH the same path; a new entry will not be added to the history stack' problem
@@ -19,18 +20,20 @@ const RelatedPostBlock = (props) => {
       <div className="thumbnail-container" onClick={reloadPage}>
         <img
           className="post-thumbnail"
-          src={props.banner}
-          alt={props.title}
+          src={banner}
+          alt={title}
         />
       </div>
       
       {/* Related blog post title */}  
       <h4 className="text-color-darkgrey post-title-link" onClick={reloadPage}>
-        {props.title}
+        {title}
       </h4>
       
       {/* Related blog post description */}
-      <p className="related-post-description text-color-darkgrey">{props.description}</p>
+      <p className="related-post-description text-color-darkgrey">
+        {description}
+      </p>
       
       {/* Related blog post cta button */}
       <p

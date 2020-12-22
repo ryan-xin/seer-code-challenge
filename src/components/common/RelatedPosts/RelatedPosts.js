@@ -10,13 +10,15 @@ const RelatedPosts = (props) => {
         <div className="related-posts-list-container">
           {
             props.posts.map((post) => {
+              const {id, banner, title, description} = post;
+              
               return (
                 <RelatedPostBlock 
-                  key={post.id}
-                  id={post.id}
-                  banner={post.banner}
-                  title={post.title}
-                  description={post.description}
+                  key={id}
+                  id={id}
+                  banner={banner}
+                  title={title}
+                  description={description}
                 />
               )
             })

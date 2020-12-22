@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './PostBlock.css';
 
 const PostBlock = (props) => {
-  const POST_PATH = `/blog/post/${props.id}`;
+  const {id, banner, title, description} = props;
+  const POST_PATH = `/blog/post/${id}`;
   
   // Save current scroll position to localstorage
   const saveScrollPosition = () => {
@@ -18,8 +19,8 @@ const PostBlock = (props) => {
           <img
             onClick={saveScrollPosition}
             className="post-thumbnail"
-            src={props.banner}
-            alt={props.title}
+            src={banner}
+            alt={title}
           />
         </div>
       </Link>
@@ -32,12 +33,12 @@ const PostBlock = (props) => {
           onClick={saveScrollPosition}
           className="text-color-darkgrey post-title-link"
         >
-          {props.title}
+          {title}
         </h2>
       </Link>
       
       {/* Blog post description */}
-      <p className="text-color-darkgrey">{props.description}</p>
+      <p className="text-color-darkgrey">{description}</p>
       
       {/* Blog post cta button */}
       <Link
