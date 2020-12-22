@@ -38,17 +38,19 @@ const Pagination = (props) => {
   
   // Lifting State num to parent to setCurrentPage: '-1' stands for clicking PrevPage Button; '1' stands for clicking PrevPage Button
   const changePageHandler = (num) => {
+    const currentPage = props.currentPage;
+    
     // Only trigger PrevPage Button when props.currentPage is bigger than 1
-    if(num === -1 && props.currentPage > 1) {
+    if(num === -1 && currentPage > 1) {
       props.changePage(num);
-      history.push(`/blog/${props.currentPage + num}`);
     }
     
     // Only trigger NextPage Button when props.currentPage is smaller than total pages(props.pages)
-    if(num === 1 && props.currentPage < props.pages) {
+    if(num === 1 && currentPage < props.pages) {
       props.changePage(num);
-      history.push(`/blog/${props.currentPage + num}`);
     }
+    
+    history.push(`/blog/${currentPage + num}`);
   };
   
   // Lifting State num to parent to setCurrentPage: num is the selected page number
