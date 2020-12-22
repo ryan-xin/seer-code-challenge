@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Menu from './Menu';
 import './Navigation.css';
 
@@ -10,16 +10,16 @@ const Navigation = (props) => {
     setMenuShow(value);
   };
   
+  const history = useHistory();
+  
   const clearCurrentPage = () => {
     // When Blog link on nav is clicked, currentPage in localStorage needs to be 1
     localStorage.setItem('currentPage', 1);
     // scrollPosition needs to be removed
     localStorage.removeItem('scrollPosition');
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    });
+    history.push('/blog');
+    window.location.reload();
+    window.scrollTo(0, 0);
   };
   
   return(
@@ -40,7 +40,12 @@ const Navigation = (props) => {
             <li>Why Seer</li>
             <li>Pricing</li>
             <li>Customer</li>
-            <Link to={'/blog'} onClick={clearCurrentPage}><li className="current-nav-link">Blog</li></Link>
+            <li
+              className="current-nav-link"
+              onClick={clearCurrentPage}
+            >
+              Blog
+            </li>
             <li>Support</li>
           </ul>
         </div>

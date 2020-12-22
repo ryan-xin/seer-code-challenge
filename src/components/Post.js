@@ -6,10 +6,10 @@ import axios from 'axios';
 import './Post.css';
 
 const Post = (props) => {
-  const POST_URL = `https://backend.seerplatform.com/content-types/blog/${props.match.params.postId}`;
+  const currentPostId = parseInt(props.match.params.postId);
+  const POST_URL = `https://backend.seerplatform.com/content-types/blog/${currentPostId}`;
   const BLOG_URL = 'https://backend.seerplatform.com/content-types/blog';
   
-  const currentPostId = parseInt(props.match.params.postId);
   const currentPage = localStorage.getItem('currentPage');
   
   const [title, setTitle] = useState('');
@@ -18,19 +18,22 @@ const Post = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [relatedPosts, setRelatedPosts] = useState([]);
   
-  const getRelatedPosts = (posts, authorId, postId) => {
+  const getRelatedPosts = (posts, title, postId) => {
     // Remove current post from all posts
     posts = posts.filter(post => {
       return post.id !== postId;
     })
     
     let relatedPosts = [];
-    // If authorId is not null, filter all posts with same authorId;
-    if (authorId) {
-      relatedPosts = posts.filter(post => {
-        return post.author_id === authorId;
-      })
-    }
+    relatedPosts = posts.filter(post => {
+      const titleArray1 = title.toLocaleLowerCase().split(' ').sort();
+      const titleArray2 = post.title.toLocaleLowerCase().split(' ').sort();
+      const similarArray = titleArray1.filter(word => {
+        return titleArray2.includes(word);
+      });
+      return similarArray.length >= 2;
+    });
+    console.log(relatedPosts);
     
     // If relatedPosts is more than 3 just show first 3
     const length = relatedPosts.length;
@@ -41,7 +44,6 @@ const Post = (props) => {
       for (let i = 0; i < (3 - length); i++) {
         relatedPosts.push(posts[i]);
       }
-      console.log(relatedPosts);
       return relatedPosts;
     }
   };
@@ -59,7 +61,9 @@ const Post = (props) => {
       axios.get(BLOG_URL)
       .then(res => {
         const resPosts = res.data.data.content_type.contents;
-        setRelatedPosts(getRelatedPosts(resPosts, post.author_id, currentPostId));
+        console.log(post.title);
+        // getRelatedPosts(resPosts, title, currentPostId);
+        setRelatedPosts(getRelatedPosts(resPosts, title, currentPostId));
       })
     })
     .catch(err => console.log(err));
