@@ -6,6 +6,26 @@ import Loading from '../../common/Loading/Loading';
 import axios from 'axios';
 import './Blog.css';
 
+const getAllPosts = (response) => {
+  return response.data.data.content_type.contents;
+};
+
+const getPageNumber = (posts) => {
+  return Math.round(posts.length / 10);
+};
+
+const getTenPosts = (posts, pageNum) => {
+  return posts.slice((pageNum - 1) * 10, (pageNum * 10));
+};
+
+const windowScrollPosition = (y) => {
+  window.scrollTo({
+    top: y,
+    left: 0,
+    behavior: 'smooth'
+  });
+};
+
 const Blog = (props) => {
   const BLOG_URL = 'https://backend.seerplatform.com/content-types/blog';
   const blogBanner = {
@@ -21,11 +41,12 @@ const Blog = (props) => {
   
   // Get num(1 or -1; 1 stands for next page & -1 stands for prev page) from Pagination to setCurrentPage
   const changePageHandler = (num) => {
-    setCurrentPage(currentPage + num);
+    const targetPageNum = currentPage + num;
+    setCurrentPage(targetPageNum);
     // Save currentPage to localStorage for non-children component use
-    localStorage.setItem('currentPage', currentPage + num);
+    localStorage.setItem('currentPage', targetPageNum);
     // Scroll to Blog List top position
-    window.scrollTo(0, 500);
+    windowScrollPosition(500);
   };
   
   // Get num(page number) from Pagination to setCurrentPage
@@ -34,20 +55,20 @@ const Blog = (props) => {
     // Save currentPage to localStorage for non-children component use
     localStorage.setItem('currentPage', num);
     // Scroll to Blog List top position
-    window.scrollTo(0, 500);
+    windowScrollPosition(500);
   };
   
   // Get all posts from backend when DOM is ready (componentDidMount)
   useEffect(() => {
     axios.get(BLOG_URL)
     .then(res => {
-      const resPosts = res.data.data.content_type.contents;
+      const resPosts = getAllPosts(res);
+      
       // Save all posts to allPosts
       setAllPosts(resPosts);
       
       // Save pages number to pages
-      const pages = Math.round(resPosts.length / 10);
-      setPages(pages);
+      setPages(getPageNumber(resPosts));
       
       // If existedPage has value setCurrentPage to parseInt(existedPage)
       const existedPage = props.match.params.pageNum;
@@ -55,7 +76,7 @@ const Blog = (props) => {
         // props.match.params.pageNum returns a string, it needs to be converted to num.
         const convertedExistedPage = parseInt(existedPage);
         setCurrentPage(convertedExistedPage);
-        setDisplayedPosts(resPosts.slice((convertedExistedPage - 1) * 10, (convertedExistedPage * 10)))
+        setDisplayedPosts(getTenPosts(resPosts, convertedExistedPage));
         // Save currentPage to localStorage for non-children component use
         localStorage.setItem('currentPage', convertedExistedPage);
       } else {
@@ -64,8 +85,8 @@ const Blog = (props) => {
         // Save currentPage to localStorage for non-children component use
         localStorage.setItem('currentPage', 1);
         // Save first 10 posts to displayedPosts and pass to PostList
-        setDisplayedPosts(resPosts.slice(0, 10));
-      }
+        setDisplayedPosts(getTenPosts(resPosts, 1));
+      } 
       setIsLoading(false);
     })
     .catch(err => console.log(err));
@@ -77,11 +98,7 @@ const Blog = (props) => {
     const scrollPosition = localStorage.getItem('scrollPosition');
     if(scrollPosition) {
       setTimeout(() => {
-        window.scrollTo({
-          top: parseInt(scrollPosition),
-          left: 0,
-          behavior: 'smooth'
-        });
+        windowScrollPosition(scrollPosition);
         localStorage.removeItem('scrollPosition');
       }, 300);
     }
@@ -89,8 +106,8 @@ const Blog = (props) => {
   
   // When currentPage changed this method is trigged to set current displayedPosts and pass to PostList
   useEffect(() => {
-    setDisplayedPosts(allPosts.slice((currentPage - 1) * 10, (currentPage * 10)))
-  }, [currentPage]);
+    setDisplayedPosts(getTenPosts(allPosts, currentPage))
+  }, [allPosts, currentPage]);
   
   return(
     <>
