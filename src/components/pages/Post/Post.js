@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import RelatedPosts from '../../common/RelatedPosts/RelatedPosts';
 import Loading from '../../common/Loading/Loading';
+import {getPost, getAllPosts, getRelatedPosts} from './PostHelper';
 import axios from 'axios';
 import './Post.css';
 
 const Post = (props) => {
   const currentPostId = parseInt(props.match.params.postId);
-  const POST_URL = `https://backend.seerplatform.com/content-types/blog/${currentPostId}`;
   const BLOG_URL = 'https://backend.seerplatform.com/content-types/blog';
-  
+  const POST_URL = `${BLOG_URL}/${currentPostId}`;
   const currentPage = localStorage.getItem('currentPage');
   
   const [title, setTitle] = useState('');
@@ -18,52 +18,21 @@ const Post = (props) => {
   const [isLoading, setIsLoading] = useState(true);
   const [relatedPosts, setRelatedPosts] = useState([]);
   
-  const getRelatedPosts = (posts, title, postId) => {
-    // Remove current post from all posts
-    posts = posts.filter(post => {
-      return post.id !== postId;
-    })
-    
-    let relatedPosts = [];
-    relatedPosts = posts.filter(post => {
-      const titleArray1 = title.toLocaleLowerCase().split(' ').sort();
-      const titleArray2 = post.title.toLocaleLowerCase().split(' ').sort();
-      const similarArray = titleArray1.filter(word => {
-        return titleArray2.includes(word);
-      });
-      return similarArray.length >= 2;
-    });
-    console.log(relatedPosts);
-    
-    // If relatedPosts is more than 3 just show first 3
-    const length = relatedPosts.length;
-    if(length >= 3) {
-      return relatedPosts.slice(0, 3);
-    // If relatedPosts is less than 3 push latest posts to relatedPosts to make it 3
-    } else {
-      for (let i = 0; i < (3 - length); i++) {
-        relatedPosts.push(posts[i]);
-      }
-      return relatedPosts;
-    }
-  };
-  
   // Get selected post from backend when DOM is ready (componentDidMount)
   useEffect(() => {
     axios.get(POST_URL)
     .then(res => {
-      const post = res.data.data.content;
+      const post = getPost(res);
       setTitle(post.title);
       setDate(post.created_at.slice(0, 10));
       setBody(post.body);
       setIsLoading(false);
+      
       // Get related posts
       axios.get(BLOG_URL)
       .then(res => {
-        const resPosts = res.data.data.content_type.contents;
-        console.log(post.title);
-        // getRelatedPosts(resPosts, title, currentPostId);
-        setRelatedPosts(getRelatedPosts(resPosts, title, currentPostId));
+        const resPosts = getAllPosts(res);
+        setRelatedPosts(getRelatedPosts(resPosts, post));
       })
     })
     .catch(err => console.log(err));
